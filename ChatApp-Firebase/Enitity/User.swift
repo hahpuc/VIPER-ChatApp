@@ -8,7 +8,12 @@
 import UIKit
 
 struct User {
-    let id: Int
+    
+    init(email: String, username: String) {
+        self.email = email
+        self.username = username
+    }
+    
     let email: String
     let username: String
 }

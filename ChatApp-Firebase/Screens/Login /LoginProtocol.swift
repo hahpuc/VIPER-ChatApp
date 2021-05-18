@@ -11,7 +11,7 @@ import FirebaseAuth
 protocol LoginViewProtocol {
     // presenter -> View
     
-    func showResult(result: AuthDataResult)
+    func showResult(result: String)
 }
 
 protocol LoginPresenterProtocol {
@@ -32,7 +32,7 @@ protocol LoginInputInteractorProtocol {
 
 protocol LoginOutputInteractorProtocol {
     // interactor -> presenter
-    func resultDidFetch(result: AuthDataResult)
+    func resultDidFetch(result: String)
 }
 
 

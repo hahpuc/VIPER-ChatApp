@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="-146.37681159420291" y="83.705357142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="Ou2-qp-7JO">
             <objects>
-                <viewController id="sqH-vW-cvT" sceneMemberID="viewController">
+                <viewController id="sqH-vW-cvT" customClass="RegisterViewController" customModule="ChatApp_Firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aha-5A-47S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,6 +202,9 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="handleSignUp:" destination="sqH-vW-cvT" eventType="touchUpInside" id="bcr-MT-nwj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kEk-SW-b79"/>
@@ -221,6 +224,11 @@
                             <constraint firstItem="4Hr-jr-gCQ" firstAttribute="top" secondItem="iz7-4c-aMy" secondAttribute="bottom" constant="50" id="z3v-HR-Om7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="fb6-60-EXm" id="7BA-AI-Dd5"/>
+                        <outlet property="passwordTextField" destination="3Az-Xu-yQM" id="gNy-T3-IGa"/>
+                        <outlet property="userNameTextField" destination="o4J-ub-hNT" id="mB1-Ip-p2r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atX-dI-C2g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

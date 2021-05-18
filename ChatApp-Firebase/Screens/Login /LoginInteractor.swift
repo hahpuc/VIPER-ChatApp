@@ -14,13 +14,11 @@ class LoginInteractor: LoginInputInteractorProtocol {
     func handleLogin(email: String, password: String) {
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            guard let result = result else {
-                print(error as Any)
-                return
-                
+            if let error = error {
+                print("Error to log in: ", error)
             }
         
-            self.presenter?.resultDidFetch(result: result)
+            self.presenter?.resultDidFetch(result: result?.user.uid ?? "")
         }
     }
     

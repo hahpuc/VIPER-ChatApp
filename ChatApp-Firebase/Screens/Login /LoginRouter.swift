@@ -7,12 +7,12 @@
 
 import UIKit
 
-typealias EntryPoint = LoginPresenterProtocol & LoginOutputInteractorProtocol
+typealias LoginEntryPoint = LoginPresenterProtocol & LoginOutputInteractorProtocol
 
 class LoginRouter: LoginRouterProtocol {
     
     static func loginStart(loginRef: LoginViewController) {
-        let presenter: EntryPoint = LoginPresenter()
+        let presenter: LoginEntryPoint = LoginPresenter()
         
         loginRef.presenter = presenter 
         loginRef.presenter?.router = LoginRouter()
@@ -20,6 +20,4 @@ class LoginRouter: LoginRouterProtocol {
         loginRef.presenter?.interactor = LoginInteractor()
         loginRef.presenter?.interactor?.presenter = presenter
     }
-    
-    
 }

@@ -21,7 +21,7 @@ class LoginPresenter: LoginPresenterProtocol {
 }
 
 extension LoginPresenter: LoginOutputInteractorProtocol {
-    func resultDidFetch(result: AuthDataResult) {
+    func resultDidFetch(result: String) {
         view?.showResult(result: result)
     }
 }

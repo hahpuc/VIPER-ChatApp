@@ -18,11 +18,12 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         LoginRouter.loginStart(loginRef: self)
+        
     }
     
-    func showResult(result: AuthDataResult) {
+    func showResult(result: String) {
         
         print("Success to login", result)
     }
