@@ -11,7 +11,7 @@ import FirebaseAuth
 protocol LoginViewProtocol {
     // presenter -> View
     
-    func showResult(result: String)
+    func showResult(uid: String)
 }
 
 protocol LoginPresenterProtocol {
@@ -21,6 +21,7 @@ protocol LoginPresenterProtocol {
     var router: LoginRouterProtocol? {get set}
  
     func handleLogin(email: String, password: String)
+    func pushUserAuthToHome(with uid: String, from view: UIViewController)
 }
 
 protocol LoginInputInteractorProtocol {
@@ -32,11 +33,13 @@ protocol LoginInputInteractorProtocol {
 
 protocol LoginOutputInteractorProtocol {
     // interactor -> presenter
-    func resultDidFetch(result: String)
+    func resultDidFetch(uid: String)
 }
 
 
 protocol LoginRouterProtocol {
     // presenter -> router
-    static func loginStart(loginRef: LoginViewController)
+    
+    func pushUserAuthToHome(with uid: String, from view: UIViewController)
+    static func loginStart(loginRef: LoginViewController) 
 }

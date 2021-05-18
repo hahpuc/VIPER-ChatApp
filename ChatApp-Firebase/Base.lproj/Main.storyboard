@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="ChatApp_Firebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginStoryBoardID" id="BYZ-38-t0r" customClass="LoginViewController" customModule="ChatApp_Firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,7 +131,7 @@
                         <outlet property="emailTextField" destination="UaX-aN-qvk" id="5fk-Ov-AUD"/>
                         <outlet property="loginButton" destination="fTM-DO-Loi" id="SlS-N4-CMN"/>
                         <outlet property="passwordTextField" destination="9VC-iY-iyW" id="F71-kW-AJs"/>
-                        <segue destination="IRp-O1-IDh" kind="show" id="6NY-Mc-eY9"/>
+                        <segue destination="XMk-Xr-G1h" kind="show" identifier="homeSegue" id="6NY-Mc-eY9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -239,16 +239,53 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="IRp-O1-IDh" customClass="HomeViewController" customModule="ChatApp_Firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UvN-kb-huT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6R-LS-VSt">
+                                <rect key="frame" x="20" y="406" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1Ra-jK-d4I"/>
+                                </constraints>
+                                <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="handleLogOut:" destination="IRp-O1-IDh" eventType="touchUpInside" id="s5X-WJ-1bh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="IhE-Px-QKi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X6R-LS-VSt" firstAttribute="leading" secondItem="IhE-Px-QKi" secondAttribute="leading" constant="20" id="0DO-ON-dUc"/>
+                            <constraint firstItem="X6R-LS-VSt" firstAttribute="centerY" secondItem="UvN-kb-huT" secondAttribute="centerY" id="NR4-DR-6b2"/>
+                            <constraint firstItem="X6R-LS-VSt" firstAttribute="centerX" secondItem="UvN-kb-huT" secondAttribute="centerX" id="XwL-f0-ET7"/>
+                            <constraint firstItem="IhE-Px-QKi" firstAttribute="trailing" secondItem="X6R-LS-VSt" secondAttribute="trailing" constant="20" id="vMX-iV-zxx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uhG-zt-86c"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNR-mL-ggD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="335" y="805"/>
+            <point key="canvasLocation" x="1244.9275362318842" y="804.91071428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E1j-Qx-tgo">
+            <objects>
+                <navigationController storyboardIdentifier="HomeStoryBoardID" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="XMk-Xr-G1h" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="9Cg-hQ-Eqf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P0k-fB-jLo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IRp-O1-IDh" kind="relationship" relationship="rootViewController" id="jlb-j8-AVt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAy-Tj-Lgv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="334.78260869565219" y="804.91071428571422"/>
         </scene>
     </scenes>
     <designables>

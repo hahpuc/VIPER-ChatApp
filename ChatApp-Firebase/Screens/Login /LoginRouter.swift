@@ -11,6 +11,10 @@ typealias LoginEntryPoint = LoginPresenterProtocol & LoginOutputInteractorProtoc
 
 class LoginRouter: LoginRouterProtocol {
     
+    func pushUserAuthToHome(with uid: String, from view: UIViewController) {
+        view.performSegue(withIdentifier: "homeSegue", sender: nil)
+    }
+    
     static func loginStart(loginRef: LoginViewController) {
         let presenter: LoginEntryPoint = LoginPresenter()
         

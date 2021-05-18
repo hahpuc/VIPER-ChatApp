@@ -28,7 +28,9 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
         if (result == "Success") {
             let alert = UIAlertController(title: "Create an Account", message: "Successfully to sign up.", preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+                self.dismiss(animated: true, completion: nil)
+            }))
             alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
             
             self.present(alert, animated: true)

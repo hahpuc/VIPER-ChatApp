@@ -18,10 +18,14 @@ class LoginPresenter: LoginPresenterProtocol {
     func handleLogin(email: String, password: String) {
         interactor?.handleLogin(email: email, password: password)
     }
+    
+    func pushUserAuthToHome(with uid: String, from view: UIViewController) {
+        router?.pushUserAuthToHome(with: uid, from: view)
+    }
 }
 
 extension LoginPresenter: LoginOutputInteractorProtocol {
-    func resultDidFetch(result: String) {
-        view?.showResult(result: result)
+    func resultDidFetch(uid: String) {
+        view?.showResult(uid: uid)
     }
 }

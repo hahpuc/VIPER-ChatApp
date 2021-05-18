@@ -18,7 +18,7 @@ class LoginInteractor: LoginInputInteractorProtocol {
                 print("Error to log in: ", error)
             }
         
-            self.presenter?.resultDidFetch(result: result?.user.uid ?? "")
+            self.presenter?.resultDidFetch(uid: result?.user.uid ?? "")
         }
     }
     

@@ -23,9 +23,14 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         
     }
     
-    func showResult(result: String) {
+    func showResult(uid: String) {
         
-        print("Success to login", result)
+        print("Success to login", uid)
+        
+        if (uid != "") {
+            presenter?.pushUserAuthToHome(with: uid, from: self)
+        }
+        
     }
     
     @IBAction func handleLogin(_ sender: Any) {
