@@ -18,6 +18,9 @@ class ChatLogsInteractor: ChatLogsInputInteractorProtocol {
         let reference = Database.database(url: urlDatabase).reference().child("User-Messages/\(currentUser.senderId)/\(otherUser.senderId)").childByAutoId()
         let toReference = Database.database(url: urlDatabase).reference().child("User-Messages/\(otherUser.senderId)/\(currentUser.senderId)").childByAutoId()
         
+        let lastestMessageReference = Database.database(url:  urlDatabase).reference().child("Lastest-Messages/\(currentUser.senderId)/\(otherUser.senderId)")
+        let toLastestMessageReference = Database.database(url: urlDatabase).reference().child("Lastest-Messages/\(otherUser.senderId)/\(currentUser.senderId)")
+        
         let messageValue = [
             "fromID": currentUser.senderId,
             "toID": otherUser.senderId,
@@ -26,6 +29,9 @@ class ChatLogsInteractor: ChatLogsInputInteractorProtocol {
         
         reference.updateChildValues(messageValue)
         toReference.updateChildValues(messageValue)
+        
+        lastestMessageReference.setValue(messageValue)
+        toLastestMessageReference.setValue(messageValue)
     }
 }
 

@@ -76,6 +76,7 @@
 		41A2DBD42654A96D00D5FF1F /* HomeLastestMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLastestMessageCell.swift; sourceTree = "<group>"; };
 		41A2DBD52654A96D00D5FF1F /* HomeLastestMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeLastestMessageCell.xib; sourceTree = "<group>"; };
 		41F6010C2654FE1A008D87A6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		41F6012726550CBD008D87A6 /* ChatApp-Firebase.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ChatApp-Firebase.entitlements"; sourceTree = "<group>"; };
 		C23FD896819861D5B2CB8A39 /* Pods-ChatApp-Firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp-Firebase.release.xcconfig"; path = "Target Support Files/Pods-ChatApp-Firebase/Pods-ChatApp-Firebase.release.xcconfig"; sourceTree = "<group>"; };
 		C2EFE3EE1AD52F0521B7A594 /* Pods_ChatApp_Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp_Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,6 +126,7 @@
 		416D12B026535B2900E58A5F /* ChatApp-Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				41F6012726550CBD008D87A6 /* ChatApp-Firebase.entitlements */,
 				416D12B126535B2900E58A5F /* AppDelegate.swift */,
 				416D12B326535B2900E58A5F /* SceneDelegate.swift */,
 				416D12FA2653696700E58A5F /* Ultilities */,
@@ -519,7 +521,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ChatApp-Firebase/ChatApp-Firebase.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Z3LF2XVPS;
 				INFOPLIST_FILE = "ChatApp-Firebase/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,7 +542,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ChatApp-Firebase/ChatApp-Firebase.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Z3LF2XVPS;
 				INFOPLIST_FILE = "ChatApp-Firebase/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
