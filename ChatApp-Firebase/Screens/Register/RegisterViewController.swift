@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
         let username = userNameTextField.text
         let password = passwordTextField.text
     
-        let newUser = User(email: email ?? "", username: username ?? "")
+        let newUser = User(email: email ?? "", username: username ?? "", uid: "")
         presenter?.handleSignUp(user: newUser, password: password ?? "")
         
 

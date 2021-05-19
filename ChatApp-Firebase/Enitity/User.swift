@@ -9,11 +9,13 @@ import UIKit
 
 struct User {
     
-    init(email: String, username: String) {
+    init(email: String, username: String, uid: String?) {
         self.email = email
         self.username = username
+        self.uid = uid
     }
     
+    let uid: String? 
     let email: String
     let username: String
 }

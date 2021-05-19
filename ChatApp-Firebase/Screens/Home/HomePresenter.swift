@@ -21,6 +21,10 @@ class HomePresenter: HomePresenterProtocol {
     func loadUserList() {
         interactor?.getUserFromFirebase()
     }
+    
+    func pushUserToChatLogsScreen(with user: User, from view: UIViewController) {
+        router?.pushUserToChatLogsScreen(with: user, from: view)
+    }
 }
 
 extension HomePresenter: HomeOutputInteractorProtocol {

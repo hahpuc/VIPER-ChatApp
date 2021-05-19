@@ -266,7 +266,8 @@
                             <constraint firstItem="fWe-mf-QTd" firstAttribute="leading" secondItem="IhE-Px-QKi" secondAttribute="leading" id="umz-Aj-iQS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uhG-zt-86c">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="uhG-zt-86c">
+                        <barButtonItem key="backBarButtonItem" title=" " id="QBY-Sr-w68"/>
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="BlM-7y-ves">
                             <connections>
                                 <action selector="handleLogOut:" destination="IRp-O1-IDh" id="8V2-fa-2Hd"/>
@@ -280,6 +281,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNR-mL-ggD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1244.9275362318842" y="804.91071428571422"/>
+        </scene>
+        <!--Chat Logs View Controller-->
+        <scene sceneID="Oi7-it-TpL">
+            <objects>
+                <viewController storyboardIdentifier="ChatLogsViewController" modalPresentationStyle="fullScreen" id="xVQ-t7-fMT" customClass="ChatLogsViewController" customModule="ChatApp_Firebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P1P-BM-e60">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1D5-JR-0hQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vEm-4G-e7U"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MEj-cE-YrU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2184" y="805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E1j-Qx-tgo">

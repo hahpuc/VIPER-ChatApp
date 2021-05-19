@@ -30,6 +30,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     
     func showUserList(with users: [User]) {
         self.users = users
+        
+        print(users)
     
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -45,9 +47,9 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     @IBAction func handleLogOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
-          try firebaseAuth.signOut()
+            try firebaseAuth.signOut()
         } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
+            print ("Error signing out: %@", signOutError)
         }
     }
 }
@@ -55,7 +57,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        self.presenter?.pushUserToChatLogsScreen(with: users[indexPath.row], from: self)
     }
     
 }

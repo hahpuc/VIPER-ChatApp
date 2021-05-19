@@ -20,5 +20,13 @@ class HomeRouter: HomeRouterProtocol {
         homeRef.presenter?.interactor?.presenter = presenter
     }
     
-    
+    func pushUserToChatLogsScreen(with user: User, from view: UIViewController) {
+        
+        let chatLogsViewController = view.storyboard?.instantiateViewController(identifier: "ChatLogsViewController") as! ChatLogsViewController
+        
+        ChatLogsRouter.chatLogsStart(chatLogsRef: chatLogsViewController, with: user)
+        
+        view.navigationController?.pushViewController(chatLogsViewController, animated: true)
+
+    }
 }

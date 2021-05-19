@@ -19,7 +19,9 @@ protocol HomePresenterProtocol {
     var interactor: HomeInputInteractorProtocol? {get set}
     var router: HomeRouterProtocol? {get set}
     
-    func viewDidLoad() 
+    func viewDidLoad()
+    
+    func pushUserToChatLogsScreen(with user: User, from view: UIViewController)
 }
 
 protocol HomeInputInteractorProtocol {
@@ -37,6 +39,8 @@ protocol HomeOutputInteractorProtocol {
  
 protocol HomeRouterProtocol {
     // presenter -> router
-    
     static func homeStart(homeRef: HomeViewController)
+    
+    func pushUserToChatLogsScreen(with user: User, from view: UIViewController)
+
 }

@@ -25,7 +25,8 @@ class HomeInteractor: HomeInputInteractorProtocol {
                 
                 let usernameFetched = placeDict["username"] as! String
                 let emailFetched = placeDict["email"] as! String
-                let user = User(email: emailFetched, username: usernameFetched)
+                let uidFetched = placeDict["uid"] as! String
+                let user = User(email: emailFetched, username: usernameFetched, uid: uidFetched)
                 
                 users.append(user)
             }
