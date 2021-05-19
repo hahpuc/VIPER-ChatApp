@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         
         let currentUser = Auth.auth().currentUser?.uid
-        print("CURRENT", currentUser)
+        print("CURRENT USER: ", currentUser)
         
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let homeVC = storyboard.instantiateViewController(identifier: "HomeStoryBoardID")

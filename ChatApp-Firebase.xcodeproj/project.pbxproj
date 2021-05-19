@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41052E382654ACD600D28B64 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41052E372654ACD600D28B64 /* HomePresenter.swift */; };
+		41052E3B2654ACDF00D28B64 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41052E3A2654ACDF00D28B64 /* HomeInteractor.swift */; };
+		41052E3E2654ACE600D28B64 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41052E3D2654ACE600D28B64 /* HomeRouter.swift */; };
+		41052E412654ACEE00D28B64 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41052E402654ACEE00D28B64 /* HomeProtocol.swift */; };
 		416838C126537F9400111933 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416838C026537F9400111933 /* RegisterPresenter.swift */; };
 		416838C426537F9F00111933 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416838C326537F9F00111933 /* RegisterInteractor.swift */; };
 		416838C726537FA700111933 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416838C626537FA700111933 /* RegisterRouter.swift */; };
@@ -26,11 +30,17 @@
 		416D12FC265369A000E58A5F /* ButtonDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D12FB265369A000E58A5F /* ButtonDesignable.swift */; };
 		416D130026536ACF00E58A5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D12FF26536ACF00E58A5F /* HomeViewController.swift */; };
 		416D130526536E5E00E58A5F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D130426536E5E00E58A5F /* User.swift */; };
+		41A2DBD62654A96D00D5FF1F /* HomeLastestMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A2DBD42654A96D00D5FF1F /* HomeLastestMessageCell.swift */; };
+		41A2DBD72654A96D00D5FF1F /* HomeLastestMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41A2DBD52654A96D00D5FF1F /* HomeLastestMessageCell.xib */; };
 		73658949580C86C520DE3433 /* Pods_ChatApp_Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFE3EE1AD52F0521B7A594 /* Pods_ChatApp_Firebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E14FAE2416607BF6E548633 /* Pods-ChatApp-Firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp-Firebase.debug.xcconfig"; path = "Target Support Files/Pods-ChatApp-Firebase/Pods-ChatApp-Firebase.debug.xcconfig"; sourceTree = "<group>"; };
+		41052E372654ACD600D28B64 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		41052E3A2654ACDF00D28B64 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		41052E3D2654ACE600D28B64 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		41052E402654ACEE00D28B64 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		416838C026537F9400111933 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		416838C326537F9F00111933 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		416838C626537FA700111933 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
@@ -52,6 +62,8 @@
 		416D12FB265369A000E58A5F /* ButtonDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonDesignable.swift; sourceTree = "<group>"; };
 		416D12FF26536ACF00E58A5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		416D130426536E5E00E58A5F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		41A2DBD42654A96D00D5FF1F /* HomeLastestMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLastestMessageCell.swift; sourceTree = "<group>"; };
+		41A2DBD52654A96D00D5FF1F /* HomeLastestMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeLastestMessageCell.xib; sourceTree = "<group>"; };
 		C23FD896819861D5B2CB8A39 /* Pods-ChatApp-Firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp-Firebase.release.xcconfig"; path = "Target Support Files/Pods-ChatApp-Firebase/Pods-ChatApp-Firebase.release.xcconfig"; sourceTree = "<group>"; };
 		C2EFE3EE1AD52F0521B7A594 /* Pods_ChatApp_Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp_Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -148,7 +160,12 @@
 		416D12FE26536AB700E58A5F /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				41A2DBD92654ABAE00D5FF1F /* LastestMessageCell */,
 				416D12FF26536ACF00E58A5F /* HomeViewController.swift */,
+				41052E372654ACD600D28B64 /* HomePresenter.swift */,
+				41052E3A2654ACDF00D28B64 /* HomeInteractor.swift */,
+				41052E3D2654ACE600D28B64 /* HomeRouter.swift */,
+				41052E402654ACEE00D28B64 /* HomeProtocol.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -159,6 +176,15 @@
 				416D130426536E5E00E58A5F /* User.swift */,
 			);
 			path = Enitity;
+			sourceTree = "<group>";
+		};
+		41A2DBD92654ABAE00D5FF1F /* LastestMessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				41A2DBD52654A96D00D5FF1F /* HomeLastestMessageCell.xib */,
+				41A2DBD42654A96D00D5FF1F /* HomeLastestMessageCell.swift */,
+			);
+			path = LastestMessageCell;
 			sourceTree = "<group>";
 		};
 		B7EDC5156320894C1955FA29 /* Frameworks */ = {
@@ -238,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				416D12BE26535B2C00E58A5F /* LaunchScreen.storyboard in Resources */,
+				41A2DBD72654A96D00D5FF1F /* HomeLastestMessageCell.xib in Resources */,
 				416D12C726535C7900E58A5F /* GoogleService-Info.plist in Resources */,
 				416D12BB26535B2C00E58A5F /* Assets.xcassets in Resources */,
 				416D12B926535B2900E58A5F /* Main.storyboard in Resources */,
@@ -297,15 +324,20 @@
 				416D12FC265369A000E58A5F /* ButtonDesignable.swift in Sources */,
 				416D12F226535FE400E58A5F /* LoginProtocol.swift in Sources */,
 				416D12EC26535FCE00E58A5F /* LoginInteractor.swift in Sources */,
+				41052E412654ACEE00D28B64 /* HomeProtocol.swift in Sources */,
+				41052E3E2654ACE600D28B64 /* HomeRouter.swift in Sources */,
 				416D12F8265367ED00E58A5F /* RegisterViewController.swift in Sources */,
+				41A2DBD62654A96D00D5FF1F /* HomeLastestMessageCell.swift in Sources */,
 				416838C726537FA700111933 /* RegisterRouter.swift in Sources */,
 				416D130026536ACF00E58A5F /* HomeViewController.swift in Sources */,
 				416D12B226535B2900E58A5F /* AppDelegate.swift in Sources */,
 				416838C126537F9400111933 /* RegisterPresenter.swift in Sources */,
 				416D12B426535B2900E58A5F /* SceneDelegate.swift in Sources */,
+				41052E382654ACD600D28B64 /* HomePresenter.swift in Sources */,
 				416D12EF26535FDA00E58A5F /* LoginRouter.swift in Sources */,
 				416838C426537F9F00111933 /* RegisterInteractor.swift in Sources */,
 				416838CA26537FB000111933 /* RegisterProtocol.swift in Sources */,
+				41052E3B2654ACDF00D28B64 /* HomeInteractor.swift in Sources */,
 				416D12E926535FC400E58A5F /* LoginPresenter.swift in Sources */,
 				416D130526536E5E00E58A5F /* User.swift in Sources */,
 			);

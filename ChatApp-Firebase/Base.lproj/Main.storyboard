@@ -242,27 +242,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6R-LS-VSt">
-                                <rect key="frame" x="20" y="406" width="374" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1Ra-jK-d4I"/>
-                                </constraints>
-                                <state key="normal" title="Log out"/>
-                                <connections>
-                                    <action selector="handleLogOut:" destination="IRp-O1-IDh" eventType="touchUpInside" id="s5X-WJ-1bh"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fWe-mf-QTd">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fbD-Zg-Y6L" customClass="HomeLastestMessageCell" customModule="ChatApp_Firebase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fbD-Zg-Y6L" id="r0B-8j-FkG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IhE-Px-QKi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="X6R-LS-VSt" firstAttribute="leading" secondItem="IhE-Px-QKi" secondAttribute="leading" constant="20" id="0DO-ON-dUc"/>
-                            <constraint firstItem="X6R-LS-VSt" firstAttribute="centerY" secondItem="UvN-kb-huT" secondAttribute="centerY" id="NR4-DR-6b2"/>
-                            <constraint firstItem="X6R-LS-VSt" firstAttribute="centerX" secondItem="UvN-kb-huT" secondAttribute="centerX" id="XwL-f0-ET7"/>
-                            <constraint firstItem="IhE-Px-QKi" firstAttribute="trailing" secondItem="X6R-LS-VSt" secondAttribute="trailing" constant="20" id="vMX-iV-zxx"/>
+                            <constraint firstItem="IhE-Px-QKi" firstAttribute="bottom" secondItem="fWe-mf-QTd" secondAttribute="bottom" id="c3v-by-v4x"/>
+                            <constraint firstItem="fWe-mf-QTd" firstAttribute="top" secondItem="IhE-Px-QKi" secondAttribute="top" id="gze-GV-Yqg"/>
+                            <constraint firstItem="IhE-Px-QKi" firstAttribute="trailing" secondItem="fWe-mf-QTd" secondAttribute="trailing" id="mYx-se-IQF"/>
+                            <constraint firstItem="fWe-mf-QTd" firstAttribute="leading" secondItem="IhE-Px-QKi" secondAttribute="leading" id="umz-Aj-iQS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uhG-zt-86c"/>
+                    <navigationItem key="navigationItem" id="uhG-zt-86c">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="BlM-7y-ves">
+                            <connections>
+                                <action selector="handleLogOut:" destination="IRp-O1-IDh" id="8V2-fa-2Hd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="fWe-mf-QTd" id="B4l-PN-BSI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VNR-mL-ggD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

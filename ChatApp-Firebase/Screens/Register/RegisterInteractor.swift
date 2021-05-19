@@ -23,7 +23,7 @@ class RegisterInteractor: RegisterInputInteractorProtocol {
             
             guard let uid = result?.user.uid else { return }
             
-            let dictionaryValues = ["email": user.email, "username": user.username]
+            let dictionaryValues = ["email": user.email, "username": user.username, "uid": uid]
             let values = [uid: dictionaryValues]
             
             let urlDatabase = "https://chatapp-firebase-f49ff-default-rtdb.asia-southeast1.firebasedatabase.app/"
