@@ -13,9 +13,12 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     @IBOutlet weak var tableView: UITableView!
     
     var presenter: HomePresenterProtocol?
-    var users: [User] = []
+    var users: [User] = [] {
+        didSet {
+            presenter?.viewDidLoad()
+        }
+    }
     var lastestMessages: [String: ChatMessage] = [:]
-
     
     override func viewDidLoad() { 
         super.viewDidLoad()
@@ -27,10 +30,6 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         self.registerTableViewCells()
         
         HomeRouter.homeStart(homeRef: self)
-        presenter?.viewDidLoad()
-    }
-        
-    override func viewWillAppear(_ animated: Bool) {
         presenter?.viewDidLoad()
     }
     

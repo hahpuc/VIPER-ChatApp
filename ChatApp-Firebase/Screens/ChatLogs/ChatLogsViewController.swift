@@ -44,20 +44,10 @@ class ChatLogsViewController: MessagesViewController, ChatLogsViewProtocol {
     func setUpMessagesChatLogs() {
         
         for (child) in chatLogsFetched {
-            print("INDEX: have child: \(child.fromID)")
+            let sender = (child.fromID == currentUser?.senderId) ? currentUser : otherUser
             
-//            messages.append(Message(sender: child.fromID as! SenderType, messageId: "1", sentDate: Date().addingTimeInterval(-86400), kind: .text(child.text)))
+            messages.append(Message(sender: sender!, messageId: "1", sentDate: Date().addingTimeInterval(-86400), kind: .text(child.text)))
         }
-
-        messages.append(Message(sender: currentUser!, messageId: "1", sentDate: Date().addingTimeInterval(-86400), kind: .text("Hello my friend")))
-
-        messages.append(Message(sender: otherUser!, messageId: "1", sentDate: Date().addingTimeInterval(-86400), kind: .text("Oh nice to meet you too!")))
-
-        messages.append(Message(sender: currentUser!, messageId: "3", sentDate: Date().addingTimeInterval(-86400), kind: .text("Do u wanna date with me?")))
-
-        messages.append(Message(sender: otherUser!, messageId: "4", sentDate: Date().addingTimeInterval(-86400), kind: .text("This's awsome")))
-
-        messages.append(Message(sender: otherUser!, messageId: "5", sentDate: Date().addingTimeInterval(-86400), kind: .text("Waiting at home til me come")))
     }
     
     func setUpCurrentUser() {
@@ -100,6 +90,9 @@ extension ChatLogsViewController: InputBarAccessoryViewDelegate {
         presenter?.performSendMessage(text, from: currentUser!, to: otherUser!)
         
         inputBar.inputTextView.text = ""
+        
+//        messages.removeAll()
+//        presenter?.fetchChatLogs(from: currentUser!, to: otherUser!)
     }
 }
 
