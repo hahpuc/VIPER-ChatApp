@@ -14,6 +14,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     
     var presenter: HomePresenterProtocol?
     var users: [User] = []
+    var lastestMessages: [String: ChatMessage] = [:]
+
     
     override func viewDidLoad() { 
         super.viewDidLoad()
@@ -27,12 +29,22 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         HomeRouter.homeStart(homeRef: self)
         presenter?.viewDidLoad()
     }
+        
+    override func viewWillAppear(_ animated: Bool) {
+        presenter?.viewDidLoad()
+    }
     
     func showUserList(with users: [User]) {
         self.users = users
-        
-        print(users)
     
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func showLastestMessage(lastestMessages: [String : ChatMessage]) {
+        self.lastestMessages = lastestMessages
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -59,7 +71,6 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.presenter?.pushUserToChatLogsScreen(with: users[indexPath.row], from: self)
     }
-    
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -71,6 +82,12 @@ extension HomeViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeLastestMessageCell", for: indexPath) as! HomeLastestMessageCell
     
         cell.setUserName(users[indexPath.row].username)
+        
+        let uidAtIndexpath = users[indexPath.row].uid ?? ""
+        
+        let message = lastestMessages[uidAtIndexpath]?.text
+        
+        cell.setLastestMEssage(message ?? "")
         
         return cell
     }

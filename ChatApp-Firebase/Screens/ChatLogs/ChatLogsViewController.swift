@@ -23,6 +23,8 @@ class ChatLogsViewController: MessagesViewController, ChatLogsViewProtocol {
     
     var messages: [Message] = []
     
+    var chatLogsFetched: [ChatMessage] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,20 +37,27 @@ class ChatLogsViewController: MessagesViewController, ChatLogsViewProtocol {
         
         setUpCurrentUser()
         setUpOtherUser()
-        setUpDummyMessages()
         
+        presenter?.fetchChatLogs(from: currentUser!, to: otherUser!)
     }
     
-    func setUpDummyMessages() {
+    func setUpMessagesChatLogs() {
+        
+        for (child) in chatLogsFetched {
+            print("INDEX: have child: \(child.fromID)")
+            
+//            messages.append(Message(sender: child.fromID as! SenderType, messageId: "1", sentDate: Date().addingTimeInterval(-86400), kind: .text(child.text)))
+        }
+
         messages.append(Message(sender: currentUser!, messageId: "1", sentDate: Date().addingTimeInterval(-86400), kind: .text("Hello my friend")))
-        
-        messages.append(Message(sender: otherUser!, messageId: "2", sentDate: Date().addingTimeInterval(-76400), kind: .text("Oh nice to meet you too!")))
-        
-        messages.append(Message(sender: currentUser!, messageId: "3", sentDate: Date().addingTimeInterval(-66400), kind: .text("Do u wanna date with me?")))
-        
-        messages.append(Message(sender: otherUser!, messageId: "4", sentDate: Date().addingTimeInterval(-56400), kind: .text("This's awsome")))
-        
-        messages.append(Message(sender: otherUser!, messageId: "5", sentDate: Date().addingTimeInterval(-46400), kind: .text("Waiting at home til me come")))
+
+        messages.append(Message(sender: otherUser!, messageId: "1", sentDate: Date().addingTimeInterval(-86400), kind: .text("Oh nice to meet you too!")))
+
+        messages.append(Message(sender: currentUser!, messageId: "3", sentDate: Date().addingTimeInterval(-86400), kind: .text("Do u wanna date with me?")))
+
+        messages.append(Message(sender: otherUser!, messageId: "4", sentDate: Date().addingTimeInterval(-86400), kind: .text("This's awsome")))
+
+        messages.append(Message(sender: otherUser!, messageId: "5", sentDate: Date().addingTimeInterval(-86400), kind: .text("Waiting at home til me come")))
     }
     
     func setUpCurrentUser() {
@@ -69,6 +78,16 @@ class ChatLogsViewController: MessagesViewController, ChatLogsViewProtocol {
         self.title = user.username
         
         self.userChattingWith = user
+    }
+    
+    func showChatLogsFetched(chatMessages: [ChatMessage]) {
+        self.chatLogsFetched = chatMessages
+        
+        self.setUpMessagesChatLogs()
+        
+        DispatchQueue.main.async {
+            self.messagesCollectionView.reloadData()
+        }
     }
 }
 

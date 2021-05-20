@@ -19,3 +19,16 @@ struct Message: MessageType {
     var sentDate: Date
     var kind: MessageKind
 }
+
+struct ChatMessage {
+    
+    init(fromID: String, text: String, toID: String) {
+        self.fromID = fromID
+        self.text = text
+        self.toID = toID
+    }
+    
+    let fromID: String
+    let text: String
+    let toID: String 
+}

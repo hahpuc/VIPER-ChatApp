@@ -15,4 +15,8 @@ class HomeLastestMessageCell: UITableViewCell {
     func setUserName(_ username: String) {
         self.userNameLabel.text = username
     }
+    
+    func setLastestMEssage(_ lastesMessage: String) {
+        self.lastestMessageLabel.text = lastesMessage
+    }
 }

@@ -34,4 +34,30 @@ class HomeInteractor: HomeInputInteractorProtocol {
             self.presenter?.userListDidFetch(users: users)
         }
     }
+    
+    func getLastestMessageFromFirebase() {
+        let urlDatabase = "https://chatapp-firebase-f49ff-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        
+        guard let currentUser = Auth.auth().currentUser?.uid else {return}
+        
+        Database.database(url: urlDatabase).reference().child("Lastest-Messages").child(currentUser).observeSingleEvent(of: .value) { (snapshot) in
+            var lastestMessages: [String: ChatMessage] = [:]
+            
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let placeDict = snap.value as! [String: Any]
+                
+                let fromID = placeDict["fromID"] as! String
+                let text = placeDict["text"] as! String
+                let toID = placeDict["toID"] as! String
+                let lastestMessage = ChatMessage(fromID: fromID, text: text, toID: toID)
+                
+                lastestMessages[snap.key] = lastestMessage
+            }
+            
+            self.presenter?.lastestMessageDidFetch(lastestMessages: lastestMessages)
+            
+            
+        }
+    }
 }

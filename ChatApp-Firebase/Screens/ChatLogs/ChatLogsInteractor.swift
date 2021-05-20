@@ -33,5 +33,28 @@ class ChatLogsInteractor: ChatLogsInputInteractorProtocol {
         lastestMessageReference.setValue(messageValue)
         toLastestMessageReference.setValue(messageValue)
     }
+    
+    func fetchChatLogs(from currentUser: Sender, to otherUser: Sender) {
+        let urlDatabase = "https://chatapp-firebase-f49ff-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        
+        Database.database(url: urlDatabase).reference().child("User-Messages").child(currentUser.senderId).child(otherUser.senderId).observeSingleEvent(of: .value) { (snapshot) in
+            
+            var chatlogs: [ChatMessage] = []
+            
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let placeDict = snap.value as! [String: Any]
+                
+                let fromID = placeDict["fromID"] as! String
+                let text = placeDict["text"] as! String
+                let toID = placeDict["toID"] as! String
+                let chatMessage = ChatMessage(fromID: fromID, text: text, toID: toID)
+                
+                chatlogs.append(chatMessage)
+            }
+            
+            self.presenter?.chatLogsFetched(chatMessages: chatlogs)
+        }
+    }
 }
 

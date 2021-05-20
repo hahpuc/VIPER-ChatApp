@@ -11,6 +11,7 @@ protocol HomeViewProtocol {
     // presenter -> view
     
     func showUserList(with users: [User])
+    func showLastestMessage(lastestMessages: [String: ChatMessage])
 }
 
 protocol HomePresenterProtocol {
@@ -29,12 +30,14 @@ protocol HomeInputInteractorProtocol {
     var presenter: HomeOutputInteractorProtocol? {get set}
 
     func getUserFromFirebase()
+    func getLastestMessageFromFirebase()
 }
 
 protocol HomeOutputInteractorProtocol {
     // interactor -> presenter
     
     func userListDidFetch(users: [User])
+    func lastestMessageDidFetch(lastestMessages: [String: ChatMessage])
 }
  
 protocol HomeRouterProtocol {

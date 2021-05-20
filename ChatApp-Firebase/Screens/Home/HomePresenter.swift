@@ -16,10 +16,15 @@ class HomePresenter: HomePresenterProtocol {
     
     func viewDidLoad() {
         self.loadUserList()
+        self.loadLastestMessage()
     }
     
     func loadUserList() {
         interactor?.getUserFromFirebase()
+    }
+    
+    func loadLastestMessage() {
+        interactor?.getLastestMessageFromFirebase()
     }
     
     func pushUserToChatLogsScreen(with user: User, from view: UIViewController) {
@@ -30,5 +35,9 @@ class HomePresenter: HomePresenterProtocol {
 extension HomePresenter: HomeOutputInteractorProtocol {
     func userListDidFetch(users: [User]) {
         view?.showUserList(with: users)
+    }
+    
+    func lastestMessageDidFetch(lastestMessages: [String : ChatMessage]) {
+        view?.showLastestMessage(lastestMessages: lastestMessages)
     }
 }

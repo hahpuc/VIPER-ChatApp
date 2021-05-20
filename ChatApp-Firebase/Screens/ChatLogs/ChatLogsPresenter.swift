@@ -23,8 +23,14 @@ class ChatLogsPresenter: ChatLogsPresenterProtocol {
     func performSendMessage(_ text: String, from currentUser: Sender, to otherUser: Sender) {
         interactor?.performSendMessage(text, from: currentUser, to: otherUser)
     }
+    
+    func fetchChatLogs(from currentUser: Sender, to otherUser: Sender) {
+        interactor?.fetchChatLogs(from: currentUser, to: otherUser)
+    }
 }
 
 extension ChatLogsPresenter: ChatLogsOutputInteractorProtocol {
-    
+    func chatLogsFetched(chatMessages: [ChatMessage]) {
+        view?.showChatLogsFetched(chatMessages: chatMessages)
+    }
 }

@@ -9,7 +9,10 @@ import UIKit
 
 protocol ChatLogsViewProtocol {
     // presenter -> view
-    func showUserNameChattingWith(with user: User) 
+    func showUserNameChattingWith(with user: User)
+    
+    
+    func showChatLogsFetched(chatMessages: [ChatMessage])
 }
 
 protocol ChatLogsPresenterProtocol {
@@ -19,6 +22,7 @@ protocol ChatLogsPresenterProtocol {
     var router: ChatLogsRouterProtocol? {get set}
     var interactor: ChatLogsInputInteractorProtocol? {get set}
     
+    func fetchChatLogs(from currentUser: Sender, to otherUser: Sender)
     func showUserNameChattingWith()
     func performSendMessage(_ text: String, from currentUser: Sender, to otherUser: Sender)
 }
@@ -28,10 +32,14 @@ protocol ChatLogsInputInteractorProtocol {
     var presenter: ChatLogsOutputInteractorProtocol? {get set}
     
     func performSendMessage(_ text: String, from currentUser: Sender, to otherUser: Sender)
+    
+    func fetchChatLogs(from currentUser: Sender, to otherUser: Sender)
 }
 
 protocol ChatLogsOutputInteractorProtocol {
     // interactor -> presenter
+    
+    func chatLogsFetched(chatMessages: [ChatMessage])
 }
 
 protocol ChatLogsRouterProtocol {
