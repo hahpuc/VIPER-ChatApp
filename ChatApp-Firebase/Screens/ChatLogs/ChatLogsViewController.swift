@@ -23,7 +23,12 @@ class ChatLogsViewController: MessagesViewController, ChatLogsViewProtocol {
     
     var messages: [Message] = []
     
-    var chatLogsFetched: [ChatMessage] = []
+    var chatLogsFetched: [ChatMessage] = [] {
+        didSet {
+            messages.removeAll()
+            presenter?.fetchChatLogs(from: currentUser!, to: otherUser!)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +39,6 @@ class ChatLogsViewController: MessagesViewController, ChatLogsViewProtocol {
         messageInputBar.delegate = self
         
         presenter?.showUserNameChattingWith()
-        
         setUpCurrentUser()
         setUpOtherUser()
         
@@ -91,7 +95,7 @@ extension ChatLogsViewController: InputBarAccessoryViewDelegate {
         
         inputBar.inputTextView.text = ""
         
-//        messages.removeAll()
+//        messages.removeAll()   
 //        presenter?.fetchChatLogs(from: currentUser!, to: otherUser!)
     }
 }

@@ -16,6 +16,7 @@
 		41398AD22654C65A003A43C2 /* ChatLogsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41398AD12654C65A003A43C2 /* ChatLogsInteractor.swift */; };
 		41398AD52654C663003A43C2 /* ChatLogsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41398AD42654C663003A43C2 /* ChatLogsRouter.swift */; };
 		41398AD82654C66D003A43C2 /* ChatLogsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41398AD72654C66D003A43C2 /* ChatLogsProtocol.swift */; };
+		413D240A265B92A200BA6D70 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 413D2409265B92A200BA6D70 /* Extension.swift */; };
 		416838C126537F9400111933 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416838C026537F9400111933 /* RegisterPresenter.swift */; };
 		416838C426537F9F00111933 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416838C326537F9F00111933 /* RegisterInteractor.swift */; };
 		416838C726537FA700111933 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416838C626537FA700111933 /* RegisterRouter.swift */; };
@@ -52,6 +53,7 @@
 		41398AD12654C65A003A43C2 /* ChatLogsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsInteractor.swift; sourceTree = "<group>"; };
 		41398AD42654C663003A43C2 /* ChatLogsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsRouter.swift; sourceTree = "<group>"; };
 		41398AD72654C66D003A43C2 /* ChatLogsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsProtocol.swift; sourceTree = "<group>"; };
+		413D2409265B92A200BA6D70 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		416838C026537F9400111933 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		416838C326537F9F00111933 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		416838C626537FA700111933 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				416D12FB265369A000E58A5F /* ButtonDesignable.swift */,
+				413D2409265B92A200BA6D70 /* Extension.swift */,
 			);
 			path = Ultilities;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				416D12B426535B2900E58A5F /* SceneDelegate.swift in Sources */,
 				41052E382654ACD600D28B64 /* HomePresenter.swift in Sources */,
 				416D12EF26535FDA00E58A5F /* LoginRouter.swift in Sources */,
+				413D240A265B92A200BA6D70 /* Extension.swift in Sources */,
 				41398ACF2654C650003A43C2 /* ChatLogsPresenter.swift in Sources */,
 				41398ACA2654BD91003A43C2 /* ChatLogsViewController.swift in Sources */,
 				41F6010D2654FE1A008D87A6 /* Message.swift in Sources */,

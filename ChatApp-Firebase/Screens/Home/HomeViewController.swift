@@ -23,6 +23,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     override func viewDidLoad() { 
         super.viewDidLoad()
         
+        print("VIEWDIDDLOAD")
+        
         self.title = Auth.auth().currentUser?.email
         
         tableView.delegate = self
@@ -39,6 +41,8 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
+        
+        
     }
     
     func showLastestMessage(lastestMessages: [String : ChatMessage]) {
@@ -65,6 +69,7 @@ class HomeViewController: UIViewController, HomeViewProtocol {
     }
 }
 
+// MARK: - Extension
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

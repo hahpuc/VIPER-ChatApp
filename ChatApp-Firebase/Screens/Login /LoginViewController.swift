@@ -19,6 +19,8 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dismissKey()
+        
         LoginRouter.loginStart(loginRef: self)
         
     }
