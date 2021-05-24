@@ -33,6 +33,8 @@ class ChatLogsViewController: MessagesViewController, ChatLogsViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dismissKey()
+        
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesDisplayDelegate = self

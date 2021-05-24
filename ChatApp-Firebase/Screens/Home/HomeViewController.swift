@@ -63,6 +63,13 @@ class HomeViewController: UIViewController, HomeViewProtocol {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
+            
+            let loginViewController = self.storyboard?.instantiateViewController(identifier: "LoginStoryBoardID") as! LoginViewController
+            
+            loginViewController.modalPresentationStyle = .fullScreen
+            
+            self.present(loginViewController, animated: true, completion: nil)
+            
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }

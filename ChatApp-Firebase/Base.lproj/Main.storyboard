@@ -127,6 +127,7 @@
                             <constraint firstItem="VBD-05-aPX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ysP-A3-MEO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8De-7E-1GX"/>
                     <connections>
                         <outlet property="emailTextField" destination="UaX-aN-qvk" id="5fk-Ov-AUD"/>
                         <outlet property="loginButton" destination="fTM-DO-Loi" id="SlS-N4-CMN"/>

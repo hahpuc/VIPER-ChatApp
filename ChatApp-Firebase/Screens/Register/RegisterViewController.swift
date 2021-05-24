@@ -20,6 +20,8 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dismissKey()
+        
         RegisterRouter.registerStart(registerRef: self)
 
     }
